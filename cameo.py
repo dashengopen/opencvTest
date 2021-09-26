@@ -4,7 +4,7 @@ from manager import CaptureManager, WindowManager
 class Cameo:
     def __init__(self):
         self.window = WindowManager("test", self.onKeypress)
-        self.capture = CaptureManager(cv2.VideoCapture("/home/dasheng/Videos/01.rmvb"), self.window, False)
+        self.capture = CaptureManager(cv2.VideoCapture(0), self.window, False)
         return
 
     def run(self):

@@ -26,13 +26,13 @@ class CaptureManager:
     
     def currentFrame(self):
         if self.enteredFrame and self.frame is None:
-            _, self.frame = self.videoCapture.read()
+            _, self.frame = self.videoCapture.retrieve()
         return self.frame
 
     def enterFrame(self):
         assert not self.enteredFrame, "enter failed"
         if self.videoCapture is not None:
-            self.enteredFrame = True
+            self.enteredFrame = self.videoCapture.grab()
         return
 
     def exitFrame(self):
